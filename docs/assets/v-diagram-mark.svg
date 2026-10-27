@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="360" viewBox="0 0 400 360" fill="none" role="img" aria-labelledby="title">
+  <title id="title">V-Diagram symbol</title>
+  <rect x="18" y="16" width="110" height="104" rx="28" fill="#0856F5"/><rect x="272" y="16" width="110" height="104" rx="28" fill="#1DBBB7"/><path d="M78 120H118L190 238H150Z" fill="#0856F5"/><path d="M282 120H322L250 238H210Z" fill="#1DBBB7"/><rect x="146" y="238" width="108" height="104" rx="30" fill="#0856F5"/>
+</svg>
