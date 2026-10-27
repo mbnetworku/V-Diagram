@@ -23,10 +23,6 @@
   <a href="CHANGELOG.md#320--2026-10-18"><img src="https://img.shields.io/badge/version-3.2.0-0891b2?style=flat-square" alt="Stable version 3.2.0" /></a>
 </p>
 
-<p align="center">
-  <a href="https://mbnetworku.github.io/V-Diagram/"><img src="https://img.shields.io/badge/Website-0891B2?style=for-the-badge" alt="V-Diagram website" /></a>
-</p>
-
 ## See V-Diagram in action
 
 <!-- v-diagram-launch-video -->
@@ -62,7 +58,7 @@ Then continue: “Add authentication”, “Highlight the cache-miss path”, or
 
 Not every answer is one diagram. Ask your agent to answer as a page and V-Diagram builds an **explainer**: the conclusion first, then one panel per question, with tables, steps, charts, code and validated diagrams.
 
-[![An explainer page: the answer first, then steps beside the sequence diagram they walk through](docs/assets/explainer-tls-en.png)](https://mbnetworku.github.io/V-Diagram/cases/explainer/tls-first-visit.html)
+![An explainer page: the answer first, then steps beside the sequence diagram they walk through](docs/assets/explainer-tls-en.png)
 
 - **Conclusion first.** The answer and its reasons lead; every panel takes one question.
 - **Diagrams that explain.** Steps sit beside the diagram they walk through and light its parts as you read. Click any node to open the full interactive view.
@@ -74,14 +70,11 @@ Use V-Diagram to answer as one page: our API's P99 went from 80 ms to 600 ms
 while the mean barely moved. What is the likely cause, and how should we investigate?
 ```
 
-Live examples: [First HTTPS visit](https://mbnetworku.github.io/V-Diagram/cases/explainer/tls-first-visit.html) · [P99 latency (Chinese)](https://mbnetworku.github.io/V-Diagram/cases/explainer/p99-tail-latency.html) · [How V-Diagram finalize keeps the last good file, read from this repository (Chinese)](https://mbnetworku.github.io/V-Diagram/cases/explainer/finalize-delivery.html) · [First rental checklist (Chinese)](https://mbnetworku.github.io/V-Diagram/cases/explainer/first-rental.html)
-
-
 ## Show what matters
 
 | Explain an agent workflow | Follow a cache miss | Explore service relationships |
 |---|---|---|
-| [![Agent workflow tracing everything the planner drives](docs/assets/v-diagram-demo-reach.png)](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/agent-tool-call.workflow.html?theme=dark&present=1#focus=planner&reach=downstream) | [![Cache-miss sequence showing the Web App to Postgres route](docs/assets/v-diagram-demo-route.png)](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/cache-miss.sequence.html?theme=dark&present=1#route=web~db) | [![Production architecture comparing backend and database roles](docs/assets/v-diagram-demo-lens.png)](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/production-deployment.architecture.html?theme=dark&present=1#lens=backend~database) |
+| ![Agent workflow tracing everything the planner drives](docs/assets/v-diagram-demo-reach.png) | ![Cache-miss sequence showing the Web App to Postgres route](docs/assets/v-diagram-demo-route.png) | ![Production architecture comparing backend and database roles](docs/assets/v-diagram-demo-lens.png) |
 | Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
 
 The [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
@@ -90,7 +83,7 @@ The [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) contains al
 
 <sub>CODE → DIAGRAM · A source-backed system map</sub>
 
-[![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)
+![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)
 
 V-Diagram traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. **[Open it ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)** · [trace reach ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream) · [typed source](docs/cases/mco-runtime.architecture.json)
 
@@ -105,8 +98,6 @@ One user started with a hand-drawn multi-agent architecture, turned it into an i
 Another user turned a Shanghai CityWalk guide into a four-day itinerary: switch between days, inspect a stop, and jump to Amap, Xiaohongshu, or Dianping. The author also added arrival check-ins and stop notes, turning the itinerary into a small tool to use during the trip. These extensions were added by the community author for this particular artifact.
 
 **[▶ Explore the interactive Shanghai CityWalk](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)**
-
-[![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)
 
 **[▶ Try the interactive version](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · Switch between D1–D4 and click a place to explore.
 
