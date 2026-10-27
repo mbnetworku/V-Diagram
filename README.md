@@ -14,6 +14,8 @@
   <a href="https://mbnetworku.github.io/V-Diagram/gallery.html"><strong>Live demos</strong></a> &nbsp;·&nbsp;
   <a href="#start"><strong>Get started</strong></a> &nbsp;·&nbsp;
   <a href="https://mbnetworku.github.io/V-Diagram/guide.html"><strong>Scenario guide</strong></a> &nbsp;·&nbsp;
+  <a href="./README_ZH.md"><strong>简体中文</strong></a> &nbsp;·&nbsp;
+  <a href="./README_JA.md"><strong>日本語</strong></a>
 </p>
 
 <p align="center">
