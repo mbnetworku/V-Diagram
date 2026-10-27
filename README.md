@@ -99,6 +99,8 @@ Another user turned a Shanghai CityWalk guide into a four-day itinerary: switch 
 
 **[▶ Explore the interactive Shanghai CityWalk](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)**
 
+![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)
+
 **[▶ Try the interactive version](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · Switch between D1–D4 and click a place to explore.
 
 <sub>Community artifact · Shanghai CityWalk · Four days of routes and place links</sub>
@@ -388,7 +390,7 @@ Historical MIT grants remain in effect; see [NOTICE](NOTICE) and [LICENSE-MIT](L
 
 ## Contributing
 
-Issues, pull requests, and real-world diagrams are welcome. Start with the [contribution guide](CONTRIBUTING.md), use the reproducible bug form for failures, or open an issue to share a validated diagram.&nbsp;·&nbsp;[LINUX&nbsp;DO](https://linux.do)
+Issues, pull requests, and real-world diagrams are welcome. Start with the [contribution guide](CONTRIBUTING.md), use the reproducible bug form for failures, or submit a validated diagram through the [community showcase form](https://github.com/mbnetworku/V-Diagram/issues/new?template=showcase.yml).&nbsp;·&nbsp;[LINUX&nbsp;DO](https://linux.do)
 
 ## Credits and disclaimer
 

@@ -82,6 +82,8 @@ test('community catalog: navigation, language toggle and disclaimer are present'
   assert.equal(attr(languageButton, 'hreflang'), 'zh-Hans');
   const html = fs.readFileSync(path.join(dist, 'community.html'), 'utf8');
   assert.match(html, /Listing is not endorsement/, 'must carry the no-endorsement disclaimer');
+  const submission = elements(dom, 'a').find((node) => (attr(node, 'href') || '').includes('github.com/mbnetworku/V-Diagram/tree/main/community'));
+  assert.ok(submission, 'must link to the submission guide');
 });
 
 
