@@ -397,7 +397,7 @@ Historical MIT grants remain in effect; see [NOTICE](NOTICE) and [LICENSE-MIT](L
 
 ## Contributing
 
-Issues, pull requests, and real-world diagrams are welcome. Start with the [contribution guide](CONTRIBUTING.md), use the reproducible bug form for failures, or submit a validated diagram through the [community showcase form](https://github.com/mbnetworku/V-Diagram/issues/new?template=showcase.yml).&nbsp;·&nbsp;[LINUX&nbsp;DO](https://linux.do)
+Issues, pull requests, and real-world diagrams are welcome. Start with the [contribution guide](CONTRIBUTING.md), use the reproducible bug form for failures, or open an issue to share a validated diagram.&nbsp;·&nbsp;[LINUX&nbsp;DO](https://linux.do)
 
 ## Credits and disclaimer
 
