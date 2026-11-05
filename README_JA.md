@@ -6,14 +6,17 @@
 </p>
 <h3 align="center">理解したいこと、計画したいこと、共有したいことを、触れるビジュアルに変えます。</h3>
 
-<p align="center"><img src="docs/assets/v-diagram-readme-hero.png" alt="V-Diagram — インタラクティブな図" width="960" /></p>
-
-<p align="center">アイデア、疑問、計画のどれから始めても構いません。AI エージェントに説明すれば、V-Diagram が探索・カスタマイズ・共有できるインタラクティブな HTML を生成します。旅行の行程や学習マップから複雑なシステムまで、あなた自身のものに作り込めます。</p>
+<p align="center">アイデア、疑問、計画を AI エージェントに説明するだけで、V-Diagram が探索・カスタマイズ・共有できる、単体で完結する HTML ファイルを生成します。</p>
 
 <p align="center">
-  <a href="https://mbnetworku.github.io/V-Diagram/gallery.html"><strong>ライブデモ</strong></a> &nbsp;·&nbsp;
-  <a href="#start"><strong>使ってみる</strong></a> &nbsp;·&nbsp;
-  <a href="https://mbnetworku.github.io/V-Diagram/guide.html"><strong>シナリオガイド</strong></a> &nbsp;·&nbsp;
+  <a href="#start"><strong>クイックスタート</strong></a> &nbsp;·&nbsp;
+  <a href="#what-you-can-make"><strong>できること</strong></a> &nbsp;·&nbsp;
+  <a href="#diagram-types"><strong>図の種類</strong></a> &nbsp;·&nbsp;
+  <a href="#explore-and-share"><strong>探索と共有</strong></a> &nbsp;·&nbsp;
+  <a href="#contributing"><strong>コントリビュート</strong></a>
+</p>
+
+<p align="center">
   <a href="./README.md"><strong>English</strong></a> &nbsp;·&nbsp;
   <a href="./README_ZH.md"><strong>简体中文</strong></a>
 </p>
@@ -21,9 +24,11 @@
 <p align="center">
   <a href="https://github.com/mbnetworku/V-Diagram/stargazers"><img src="https://img.shields.io/github/stars/mbnetworku/V-Diagram?style=flat-square&amp;color=E5B650&amp;logo=github&amp;label=Stars" alt="GitHub stars" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-22c55e?style=flat-square" alt="Apache License 2.0" /></a>
-  <a href="#インストール方法"><img src="https://img.shields.io/badge/works_with-Claude_Code_%7C_Codex_%7C_Cursor_%7C_OpenCode-7C3AED?style=flat-square" alt="Works with Claude Code, Codex, Cursor, and OpenCode" /></a>
+  <a href="#installation-options"><img src="https://img.shields.io/badge/works_with-Claude_Code_%7C_Codex_%7C_Cursor_%7C_OpenCode-7C3AED?style=flat-square" alt="Works with Claude Code, Codex, Cursor, and OpenCode" /></a>
   <a href="CHANGELOG.md#320--2026-10-18"><img src="https://img.shields.io/badge/version-3.2.0-0891b2?style=flat-square" alt="Stable version 3.2.0" /></a>
 </p>
+
+<p align="center"><img src="docs/assets/v-diagram-readme-hero.png" alt="V-Diagram — インタラクティブな図" width="960" /></p>
 
 ## 実際の V-Diagram
 
@@ -31,62 +36,20 @@
 
 https://github.com/user-attachments/assets/78570807-ba1d-4737-953f-55504a378a87
 
-**ひと言で、リポジトリを可視化。** 約35秒の英語デモで、図の操作、ソースコードへのリンク、経路の追跡をご覧ください。[インタラクティブな作例を試す ↗](https://mbnetworku.github.io/V-Diagram/gallery.html)
+<p align="center"><sub>約35秒の英語デモ：図の操作、ソースコードへのリンク、経路の追跡をご覧ください。</sub></p>
 
-<a id="start"></a>
+## V-Diagram を選ぶ理由
 
-### インストールして、アイデアを説明する
-
-Cursor、Claude Code、Codex CLI、OpenCode で利用できます。その他の連携については下記のインストール方法を参照してください。
-
-```bash
-npx skills add mbnetworku/V-Diagram -g
-```
-
-エージェントにこう送ってください:
-
-```text
-Use V-Diagram to diagram a web request: Browser calls the API,
-the API checks Redis, and a cache miss queries PostgreSQL and fills the cache.
-```
-
-そのまま「認証を追加して」「キャッシュミスの経路を強調して」「ライトテーマに切り替えて」と続けられます。
-
-**リポジトリは不要です:** 説明から始めることも、リポジトリを読ませてソースに基づくアーキテクチャ図を作らせることもできます。
-
-[エージェントを選ぶ](https://mbnetworku.github.io/V-Diagram/start.html?agent=cursor&type=architecture) · [インストールの詳細と更新チェック](#クイックスタート)
-
-## 質問すると、1 ページで答えが返る
-
-答えがいつも 1 枚の図とは限りません。エージェントに「1 ページで答えて」と頼むと、V-Diagram は **explainer** を作ります。結論を先に示し、質問ごとのパネルで、表・手順・チャート・コード・検証済みの図を使って理由を説明します。
-
-[![explainer の例：結論が先頭にあり、手順がそれを説明するシーケンス図の横に並ぶ](docs/assets/explainer-tls-en.png)](https://mbnetworku.github.io/V-Diagram/cases/explainer/tls-first-visit.html)
-
-- **結論が先。** 答えと理由が先頭に来て、各パネルは 1 つの質問に答えます。
-- **図と文章が連動する。** 手順は説明対象の図の横に並び、読んでいる手順に合わせて図の該当部分が光ります。ノードをクリックすると完全なインタラクティブ表示が開きます。
-- **確かめられる。** 主張には番号付きの出典が付き、リポジトリの抜粋は特定のコミットに固定され、ソースカードで開けます。
-- **共有しやすい。** 1 つの HTML ファイルに 4 つのスタイルとライト／ダークテーマ。PNG・WebP・JPG の縦長画像や PDF 印刷で書き出せます。どのパネルにも追加の質問ができ、エージェントはそのパネルだけを直せます。
-
-```text
-V-Diagram で 1 ページにまとめて答えて：API の P99 が 80 ms から 600 ms に上がったが、
-平均はほとんど変わらない。考えられる原因と調べ方は？
-```
-
-ライブ例：[初めての HTTPS 接続（英語）](https://mbnetworku.github.io/V-Diagram/cases/explainer/tls-first-visit.html) · [P99 レイテンシ（中国語）](https://mbnetworku.github.io/V-Diagram/cases/explainer/p99-tail-latency.html) · [V-Diagram の finalize をリポジトリから読む（中国語）](https://mbnetworku.github.io/V-Diagram/cases/explainer/finalize-delivery.html) · [初めての賃貸チェックリスト（中国語）](https://mbnetworku.github.io/V-Diagram/cases/explainer/first-rental.html)
-
-## 伝えたいことを見せる
-
-| エージェントのワークフローを説明する | キャッシュミスを追う | サービス間の関係を調べる |
-|---|---|---|
-| [![プランナーから下流をすべてたどるエージェントワークフロー](docs/assets/v-diagram-demo-reach.png)](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/agent-tool-call.workflow.html?theme=dark&present=1#focus=planner&reach=downstream) | [![Web アプリから Postgres への経路を示すキャッシュミスのシーケンス](docs/assets/v-diagram-demo-route.png)](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/cache-miss.sequence.html?theme=dark&present=1#route=web~db) | [![バックエンドとデータベースのロールを比較する本番アーキテクチャ](docs/assets/v-diagram-demo-lens.png)](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/production-deployment.architecture.html?theme=dark&present=1#lens=backend~database) |
-| 1 つのステップから下流をすべてたどります。 | Web アプリからデータベースまでの経路を強調します。 | 記述されたバックエンドとデータベースの接続に絞って見ます。 |
-
-[Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) には、チェックイン済みの 11 シナリオすべてと、その JSON ソース、検証レシートが含まれています。
+| 🗺️ 構造を理解する | 🧭 ストーリーをたどる | 🧩 自分のやり方で拡張する | 📤 結果を共有する |
+|---|---|---|---|
+| コードや説明から、コンポーネント、ワークフロー、関係を整理します。 | ノードを探索し、経路をたどり、任意のビューをリンクで共有します。 | 編集可能な型付きソースを保持したまま、オープンソースのコードや生成された HTML の上に積み上げられます。 | 単体で完結する HTML ファイルを共有するか、画像・動画・シェアカードとして書き出せます。 |
 
 ## プレビュー
 
 <details>
-<summary>テーマ、エクスポート、シェアカード</summary>
+<summary><strong>テーマ、エクスポート、シェアカード</strong></summary>
+
+<br />
 
 同じ図を 2 つのテーマで、ワンクリック切り替え:
 
@@ -108,18 +71,41 @@ Export メニューから PNG をクリップボードにコピーしたり、�
 
 </details>
 
+---
+
+<a id="start"></a>
+
 ## クイックスタート
 
-**現在の安定版:** `v3.2.0`。[変更履歴](CHANGELOG.md#320--2026-10-18)を参照してください。
-
-### 1. インストール
+**1. インストール**（Cursor、Claude Code、Codex CLI、OpenCode）:
 
 ```bash
 npx skills add mbnetworku/V-Diagram -g
 ```
 
+**2. エージェントに頼む。** リポジトリは不要です:
+
+```text
+Use V-Diagram to diagram a web request: Browser calls the API,
+the API checks Redis, and a cache miss queries PostgreSQL and fills the cache.
+```
+
+**3. チャットで調整する。** 「認証を追加して」「キャッシュミスの経路を強調して」「ライトテーマに切り替えて」と続けてください。V-Diagram は型付きソースを保持しているため、無関係な構造は安定したままです。
+
+ソースを根拠にしたい場合は、リポジトリを開いてこう依頼します:
+
+```text
+Analyze this repository, then use v-diagram to create a high-level runtime architecture diagram.
+Show 8–12 core components, one primary path, external dependencies, and trust boundaries.
+Put supporting detail in cards instead of adding more edges.
+```
+
+<a id="quick-start"></a>
+
 <details>
-<summary>その他のインストール方法と更新チェックの詳細</summary>
+<summary><strong>その他のインストール方法、更新チェック、更新の受け取り方</strong>（現在の安定版: <code>v3.2.0</code>）</summary>
+
+<br />
 
 Cursor に明示的・非対話的にインストールする場合:
 
@@ -133,36 +119,56 @@ npx -y skills add mbnetworku/V-Diagram --skill v-diagram --agent cursor --global
 npx skills use mbnetworku/V-Diagram@v-diagram --agent codex
 ```
 
+**更新チェック。** V-Diagram は固定の安定版マニフェストを GET して任意の更新リマインダーを表示することがありますが、更新をダウンロードしたりインストールしたりすることはありません。チェックに成功すると次回まで約 24 時間（±20%）待機し、失敗した場合はアクティブに使用していれば 6 時間後、その後は 24 時間後に再試行します。サーバーが受け取るのは通常の HTTP メタデータ（IP と時刻）だけで、バージョン、Agent、プロジェクトデータ、プロンプト、アカウント／デバイス ID、ETag は送信されません。更新するかどうか、いつ更新するかは常にあなたが決めます。`VDIAGRAM_UPDATE_CHECK_DISABLED=1` を設定すると、ネットワーク通信とリマインダー状態の書き込みを無効化できます。
 
-[エージェント切り替え](https://mbnetworku.github.io/V-Diagram/start.html?agent=cursor&type=architecture)は `cursor`、`codex`、`claude-code`、`opencode` に対応しています。
+**更新の受け取り方。**
 
-V-Diagram は固定の安定版マニフェストを GET して任意の更新リマインダーを表示することがありますが、更新をダウンロードしたりインストールしたりすることはありません。チェックに成功すると次回まで約 24 時間（±20%）待機し、失敗した場合はアクティブに使用していれば 6 時間後、その後は 24 時間後に再試行します。サーバーが受け取るのは通常の HTTP メタデータ（IP と時刻）だけで、バージョン、Agent、プロジェクトデータ、プロンプト、アカウント／デバイス ID、ETag は送信されません。更新するかどうか、いつ更新するかは常にあなたが決めます。`ARCHIFY_UPDATE_CHECK_DISABLED=1` を設定すると、ネットワーク通信とリマインダー状態の書き込みを無効化できます。
+- **リリース通知:** この GitHub リポジトリ上部で **Watch → Custom → Releases** を選択します。スターを付けてもリリース通知は届きません。
+- **変更内容:** [リリースノート](https://github.com/mbnetworku/V-Diagram/releases)と[変更履歴](CHANGELOG.md#320--2026-10-18)。
+- **フィードリーダー:** [リリースフィードを購読する](https://github.com/mbnetworku/V-Diagram/releases.atom)。
+
+更新チェッカー付きのインストールは、図の提供時に新しい安定版も確認し、リマインダーを表示できます。チェッカーのない古いインストールは、この機能を使うために手動で更新する必要があります。V-Diagram が更新を自動でインストールすることはありません。
 
 </details>
 
-### 2. 説明から始める — リポジトリは不要
+---
+
+<a id="what-you-can-make"></a>
+
+## できること
+
+### 1 ページで答える
+
+エージェントに「1 ページで答えて」と頼むと、V-Diagram は **explainer** を作ります。結論を先に示し、質問ごとのパネルで、表・手順・チャート・コード・検証済みの図を使って理由を説明します。
+
+![explainer の例：結論が先頭にあり、手順がそれを説明するシーケンス図の横に並ぶ](docs/assets/explainer-tls-en.png)
+
+| | |
+|---|---|
+| **結論が先** | 答えと理由が先頭に来て、各パネルは 1 つの質問に答えます。 |
+| **図と文章が連動する** | 手順は説明対象の図の横に並び、読んでいる手順に合わせて図の該当部分が光ります。 |
+| **確かめられる** | 主張には番号付きの出典が付き、リポジトリの抜粋は特定のコミットに固定されます。 |
+| **共有しやすい** | 1 つの HTML ファイルに 4 つのスタイルとライト／ダークテーマ。PNG・WebP・JPG・PDF で書き出せます。 |
 
 ```text
-Use V-Diagram to draw: Browser -> API -> Redis cache -> PostgreSQL fallback.
+V-Diagram で 1 ページにまとめて答えて：API の P99 が 80 ms から 600 ms に上がったが、
+平均はほとんど変わらない。考えられる原因と調べ方は？
 ```
 
-ソースを根拠にしたい場合は、リポジトリを開いてこう依頼します:
+### 伝えたいことを見せるビュー
 
-```text
-Analyze this repository, then use v-diagram to create a high-level runtime architecture diagram.
-Show 8–12 core components, one primary path, external dependencies, and trust boundaries.
-Put supporting detail in cards instead of adding more edges.
-```
+| エージェントのワークフローを説明する | キャッシュミスを追う | サービス間の関係を調べる |
+|---|---|---|
+| ![プランナーから下流をすべてたどるエージェントワークフロー](docs/assets/v-diagram-demo-reach.png) | ![Web アプリから Postgres への経路を示すキャッシュミスのシーケンス](docs/assets/v-diagram-demo-route.png) | ![バックエンドとデータベースのロールを比較する本番アーキテクチャ](docs/assets/v-diagram-demo-lens.png) |
+| 1 つのステップから下流をすべてたどります。 | Web アプリからデータベースまでの経路を強調します。 | 記述されたバックエンドとデータベースの接続に絞って見ます。 |
 
-### 3. チャットで調整する
+[Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) には、チェックイン済みの 11 シナリオすべてと、その JSON ソース、検証レシートが含まれています。
 
-`add Redis`、`move auth to the left`、`highlight the rollback path` のように、焦点を絞った依頼を続けてください。V-Diagram は型付きソースを保持しているため、狙った箇所だけを反復できます。
+---
 
-## 適切な図を選ぶ
+<a id="diagram-types"></a>
 
-<details>
-<summary>10 種類の図、アーキテクチャの比較、サンプル</summary>
-
+## 図の種類
 
 | 種類 | 向いている対象 | プロンプトに含めるもの |
 |---|---|---|
@@ -171,19 +177,11 @@ Put supporting detail in cards instead of adding more edges.
 | **Sequence** | API 呼び出し、キャッシュフォールバック、認証、非同期トレース | 呼び出し元、呼び出し先、戻り、タイミング |
 | **Data Flow** | パイプライン、リネージ、PII、コンシューマ | ソース、変換、ストア、境界 |
 | **Lifecycle** | 状態、リトライ、待機、終端結果 | 状態、イベント、リトライとキャンセルの経路 |
-| **ERD** | データベーススキーマ: テーブル、カラム、キー、カーディナリティ | テーブル、各カラムと型、主キー・外部キー・ユニークキー、リレーションのカーディナリティ |
-| **Class** | クラス、インターフェース、主要メンバー、型同士の関係 | 型、主要メンバー、継承とインターフェース実装、コンポジション、依存 |
+| **ERD** | データベーススキーマ: テーブル、カラム、キー、カーディナリティ | テーブル、各カラムと型、キー、カーディナリティ |
+| **Class** | クラス、インターフェース、主要メンバー、型同士の関係 | 型、主要メンバー、継承、コンポジション、依存 |
 | **Tree** | 親が 1 つの階層: リポジトリ、モジュール、機能の分解 | ルート、階層、各ブランチの中身 |
-| **Timeline** | いつ何が起きたか: インシデントレビュー、リリース履歴 | タイムゾーン付きのタイムスタンプ、イベント、ソースレーン、時刻が実測か説明用か |
-| **Waterfall** | 1 つのリクエストやエージェント実行の時間の内訳 | スパン、開始時刻と所要時間、ネスト、所要時間が実測か説明用か |
-
-Architecture の任意プロファイル `deployment-ownership` は、記述されたオーナー、リージョン配置、データベースのプライベートスコープ、名前付きの境界越えが欠けている場合は fail-closed で停止します。暗黙的に有効化されることはなく、ライブのインフラを検査することもありません。[検証済みのデプロイ実証](https://mbnetworku.github.io/V-Diagram/gallery.html#proof-deployment-ownership)を参照してください。
-
-設計や PR のレビューでは、Architecture Delta が検証済みの Before / Delta / After スナップショットを機械可読なレシート付きで比較します。記述された変更を選ぶか、有限でビューア専用の Review を 1 つ再生してください。影響度・リスク・マージ安全性を推測することはありません。
-
-`node v-diagram/bin/v-diagram.mjs compare architecture base.json head.json architecture-delta.html --json`
-
-[![追加・削除・変更・移動された記述済みの事実を示す Architecture Delta](docs/assets/architecture-delta-proof.jpg)](examples/checkout-platform-delta.html)
+| **Timeline** | いつ何が起きたか: インシデントレビュー、リリース履歴 | タイムゾーン付きのタイムスタンプ、イベント、ソースレーン |
+| **Waterfall** | 1 つのリクエストやエージェント実行の時間の内訳 | スパン、開始時刻と所要時間、ネスト |
 
 どれを選べばよいか分からない場合は、[インタラクティブなシナリオガイド](https://mbnetworku.github.io/V-Diagram/guide.html)を使うか、依存関係ゼロの CLI に尋ねてください:
 
@@ -192,61 +190,89 @@ node v-diagram/bin/v-diagram.mjs guide "Show an API request with Redis cache mis
 node v-diagram/bin/v-diagram.mjs guide "Map Kafka topics, consumer groups, replay, and DLQ" --json
 ```
 
-Workflow はレーンをまたいでもハッピーパスを明確に保ちます:
+<details>
+<summary><strong>すべての種類のサンプルを見る</strong></summary>
 
-![Workflow の例](docs/assets/v-diagram-workflow.png)
+<br />
 
-Sequence は 1 つのやり取りを時間軸で説明します:
+| Workflow | Sequence | Data Flow |
+|---|---|---|
+| ![Workflow の例](docs/assets/v-diagram-workflow.png) | ![Sequence の例](docs/assets/v-diagram-sequence.png) | ![Data Flow の例](docs/assets/v-diagram-dataflow.png) |
+| レーンをまたいでもハッピーパスを明確に保ちます。 | 1 つのやり取りを時間軸で説明します。 | データの移動と機密性の境界を明示します。 |
 
-![Sequence の例](docs/assets/v-diagram-sequence.png)
+| Lifecycle | ERD | Class |
+|---|---|---|
+| ![Lifecycle の例](docs/assets/v-diagram-lifecycle.png) | ![ERD の例: customer、order、payment、inventory、product、order_item テーブルをドメインごとにまとめた注文管理スキーマ](docs/assets/v-diagram-erd.png) | ![Class の例: OrderService が PaymentGateway インターフェースに依存し、カードとウォレットのゲートウェイが実装する](docs/assets/v-diagram-class.png) |
+| 進行、待機、リトライ、終端結果を切り分けます。 | テーブル、カラム、キー、カーディナリティをまとめて示します。 | 契約、メンバー、依存関係を示します。 |
 
-Data Flow はデータの移動と機密性の境界を明示します:
+| Tree | Timeline | Waterfall |
+|---|---|---|
+| ![Tree の例: 注文、決済、運用の機能に分解された決済プラットフォーム](docs/assets/v-diagram-tree.png) | ![Timeline の例: リリース、監視、対応のイベントを 1 本の時間軸に並べた説明用の決済障害](docs/assets/v-diagram-timeline.png) | ![Waterfall の例: 在庫照会と割引計算が並行して走るチェックアウトリクエストの説明用の所要時間](docs/assets/v-diagram-waterfall.png) |
+| 親が 1 つの包含関係。 | イベントを実時間に比例した 1 本の時間軸に配置。 | ネストや重なりのあるスパン。 |
 
-![Data Flow の例](docs/assets/v-diagram-dataflow.png)
+ERD、Class、Tree、Timeline、Waterfall は 3.1 で追加されました。Timeline と Waterfall の例は説明用のデータを使用しています。ログやトレースに基づく時刻や所要時間だけを実データとして扱ってください。
 
-Lifecycle は進行、待機、リトライ、終端結果を切り分けます:
+**サンプルを開く:** [`ERD`](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/orders.erd.html) · [`Class`](examples/class-payments-rendered.html) · [`Tree`](examples/tree-payment-platform-rendered.html) · [`Timeline`](examples/timeline-payment-incident-rendered.html) · [`Waterfall`](examples/waterfall-checkout-request-rendered.html)
 
-![Lifecycle の例](docs/assets/v-diagram-lifecycle.png)
-
-3.1 で ERD、Class、Tree、Timeline、Waterfall が追加されました。
-
-ERD は、テーブル、すべてのカラムとキー、リレーションのカーディナリティをまとめて示します:
-
-![ERD の例: customer、order、payment、inventory、product、order_item テーブルをドメインごとにまとめた注文管理スキーマ](docs/assets/v-diagram-erd.png)
-
-Class は契約、主要メンバー、どの型がそれに依存し実装しているかを示します:
-
-![Class の例: OrderService が PaymentGateway インターフェースに依存し、カードとウォレットのゲートウェイが実装する](docs/assets/v-diagram-class.png)
-
-Tree は機能の分解のような、親が 1 つの包含関係を示します:
-
-![Tree の例: 注文、決済、運用の機能に分解された決済プラットフォーム](docs/assets/v-diagram-tree.png)
-
-Timeline はイベントを実時間に比例した 1 本の時間軸に置き、ソースごとにレーンを分けます:
-
-![Timeline の例: リリース、監視、対応のイベントを 1 本の時間軸に並べた説明用の決済障害](docs/assets/v-diagram-timeline.png)
-
-Waterfall はネストや重なりのあるスパンのどこで時間がかかったかを示します:
-
-![Waterfall の例: 在庫照会と割引計算が並行して走るチェックアウトリクエストの説明用の所要時間](docs/assets/v-diagram-waterfall.png)
-
-サンプルを開く: [`ERD`](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/orders.erd.html) · [`Class`](examples/class-payments-rendered.html) · [`Tree`](examples/tree-payment-platform-rendered.html) · [`Timeline`](examples/timeline-payment-incident-rendered.html) · [`Waterfall`](examples/waterfall-checkout-request-rendered.html)。Timeline と Waterfall の例は説明用のデータを使用しています。ログやトレースに基づく時刻や所要時間だけを実データとして扱ってください。
-
-Architecture の例: [`web-app`](examples/web-app.html) · [`V-Diagram pipeline`](examples/v-diagram-repo.html) · [`grid placement`](examples/v-diagram-repo-grid.html) · [`desktop agent`](examples/maka-architecture.html)
+**Architecture の例:** [`web-app`](examples/web-app.html) · [`V-Diagram pipeline`](examples/v-diagram-repo.html) · [`grid placement`](examples/v-diagram-repo-grid.html) · [`desktop agent`](examples/maka-architecture.html)
 
 </details>
 
-## V-Diagram を選ぶ理由
+<details>
+<summary><strong>Architecture プロファイルとレビュー（Delta）</strong></summary>
 
-| 構造を理解する | ストーリーをたどる |
+<br />
+
+Architecture の任意プロファイル `deployment-ownership` は、記述されたオーナー、リージョン配置、データベースのプライベートスコープ、名前付きの境界越えが欠けている場合は fail-closed で停止します。暗黙的に有効化されることはなく、ライブのインフラを検査することもありません。[検証済みのデプロイ実証](https://mbnetworku.github.io/V-Diagram/gallery.html#proof-deployment-ownership)を参照してください。
+
+設計や PR のレビューでは、Architecture Delta が検証済みの Before / Delta / After スナップショットを機械可読なレシート付きで比較します。記述された変更を選ぶか、有限でビューア専用の Review を 1 つ再生してください。影響度・リスク・マージ安全性を推測することはありません。
+
+```bash
+node v-diagram/bin/v-diagram.mjs compare architecture base.json head.json architecture-delta.html --json
+```
+
+[![追加・削除・変更・移動された記述済みの事実を示す Architecture Delta](docs/assets/architecture-delta-proof.jpg)](examples/checkout-platform-delta.html)
+
+</details>
+
+---
+
+<a id="explore-and-share"></a>
+
+## 探索と共有
+
+すべての出力は、単体で完結する HTML ビューアです。ショートカットと操作:
+
+| 操作 | ショートカット |
 |---|---|
-| コードや説明から、コンポーネント、ワークフロー、関係を整理します。 | ノードを探索し、経路をたどり、任意のビューをリンクで共有します。 |
-| **自分のやり方で拡張する** | **結果を共有する** |
-| 編集可能なソースを保持したまま、オープンソースのコードや生成された HTML に独自のインタラクションやユースケースを積み上げられます。 | 単体で完結する HTML ファイルを共有するか、画像・動画・シェアカードとして書き出せます。 |
+| 事実ベースの Diagram Guide を開く | <kbd>?</kbd> |
+| セマンティックノードを検索してフォーカス | <kbd>/</kbd> |
+| 記述された上流/下流の到達範囲をトレース | ノードをフォーカス → `Upstream` / `Downstream` |
+| 有向ルートを調べて経路を確認 | <kbd>R</kbd> または `PATH` |
+| 1〜2 個のセマンティックロールを比較 | <kbd>L</kbd> または `LENS` |
+| ライブの全体レーダーを開く | <kbd>M</kbd> または `MAP` |
+| プレゼンテーションステージに入る | <kbd>F</kbd> |
+| ビジュアルスタイルを選択 / テーマ切り替え / Export を開く | <kbd>S</kbd> / <kbd>T</kbd> / <kbd>E</kbd> |
+| ズーム / リセット | <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> |
+
+安定したリンクで `#focus=<id>`、`#focus=<id>&reach=upstream|downstream`、`#relation=<id>`、`#route=<source>~<target>`、`#lens=<kind>~<kind>` を復元できます。モーションは `prefers-reduced-motion` を尊重し、正規のエクスポートには含まれません。
+
+---
+
+## 仕組み
+
+| ステップ | 内容 |
+|---|---|
+| **1 · Generate** | エージェントが説明から型付き JSON IR を生成します。 |
+| **2 · Validate** | 同梱のバリデータとレイアウトルールがソースを検査します。失敗時は、機械可読な JSON で修復すべき箇所を正確に示します。 |
+| **3 · Preview**（任意） | ループバック限定のデスクトップセッションが 1 つのソースを監視し、検証済みのリビジョンだけを再読み込みします。失敗時は last-good の成果物を保持します。 |
+| **4 · Deliver** | 同一ディレクトリに候補をレンダリングして検査し、合格したものだけがアトミックに対象を置き換えます。 |
+| **5 · Iterate** | 無関係な構造は安定させたまま、エージェントがソースを更新します。 |
 
 <details>
-<summary>この体験を支えているエンジニアリング</summary>
+<summary><strong>エンジニアリングの詳細</strong></summary>
 
+<br />
 
 - **汎用オートレイアウトではなくレイアウトの判断** — 階層、余白、経路、強調をエージェントが選択します。共有される自動接続点は決定論的に分散し、1 点に矢印が集中することはありません。
 - **型付き JSON IR** — レンダラーが担うすべてのモードにスキーマと再現可能なソースがあります。
@@ -261,20 +287,10 @@ V-Diagram は汎用の作図エディタでも Mermaid のテーマでもあり�
 
 </details>
 
-## 仕組み
-
 <details>
-<summary>生成、検証、プレビュー、デリバリーの詳細</summary>
+<summary><strong>コマンドラインリファレンスと設定</strong></summary>
 
-| ステップ | 内容 |
-|---|---|
-| **Generate** | エージェントが説明から型付き JSON IR を生成します。 |
-| **Validate** | 同梱のバリデータとレイアウトルールがソースを検査します。失敗時は、機械可読な JSON で修復すべき箇所を正確に示します。 |
-| **Preview（任意）** | ループバック限定のデスクトップセッションが 1 つのソースを監視し、検証済みのリビジョンだけを再読み込みします。失敗時は last-good の成果物を保持します。 |
-| **Deliver** | 同一ディレクトリに候補をレンダリングして検査し、合格したものだけがアトミックに対象を置き換えます。その後、任意の `--open` でそのファイルを開きます。 |
-| **Iterate** | 無関係な構造は安定させたまま、エージェントがソースを更新します。 |
-
-よく使うリポジトリコマンド:
+<br />
 
 ```bash
 cd v-diagram
@@ -304,27 +320,13 @@ node bin/v-diagram.mjs deliver workflow examples/agent-tool-call.workflow.json /
 }
 ```
 
-`meta.locale=en|zh-CN|zh-TW|es|ko|ar` はページタイトル、Legend、状態／エラー、アクセシビリティ、HTML/SVG の `lang` をローカライズします（記述された内容自体は変更しません）。該当しない場合は省略し、要求された言語の文言はそのまま維持し、英語へフォールバックした場合はその旨を明示してください。静止出力では `animation` は省略され、`classic` が既定になります。
+`meta.locale` はページタイトル、Legend、状態／エラー、アクセシビリティ、HTML/SVG の `lang` をローカライズします（記述された内容自体は変更しません）。`en`、`zh-CN`、`zh-TW`、`es`、`ko`、`ar` は同梱されており、`meta.locale` の指定だけで使えます。`meta.translations`（正規のメッセージキーから翻訳文字列へのマップ）で個別のキーを上書きでき、残りは選択した言語のまま維持されます。それ以外の言語はここにカタログを指定してください（`v-diagram/examples/locales/` を参照）。指定がなければ、レンダラーは英語にフォールバックしてその旨を明示します。静止出力では `animation` は省略され、`classic` が既定になります。
 
 </details>
 
-## 出力を探索して共有する
+---
 
-| 操作 | ショートカット |
-|---|---|
-| 事実ベースの Diagram Guide を開く | <kbd>?</kbd> |
-| セマンティックノードを検索してフォーカス | <kbd>/</kbd> |
-| 記述された上流/下流の到達範囲をトレース | ノードをフォーカス → `Upstream` / `Downstream` |
-| 有向ルートを調べて経路を確認 | <kbd>R</kbd> または `PATH` |
-| 1〜2 個のセマンティックロールを比較 | <kbd>L</kbd> または `LENS` |
-| ライブの全体レーダーを開く | <kbd>M</kbd> または `MAP` |
-| プレゼンテーションステージに入る | <kbd>F</kbd> |
-| ビジュアルスタイルを選択（`S` で循環）/ テーマ切り替え / Export を開く | <kbd>S</kbd> / <kbd>T</kbd> / <kbd>E</kbd> |
-| ズーム / リセット | <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> |
-
-安定したリンクで `#focus=<id>`、`#focus=<id>&reach=upstream|downstream`、`#relation=<id>`、`#route=<source>~<target>`、`#lens=<kind>~<kind>` を復元できます。Live は一時停止するまで接続の流れを繰り返し、意味的なプレビューは有限のままです。モーションは `prefers-reduced-motion` を尊重し、正規のエクスポートには含まれません。
-
-生成とビューアの完全な仕様は [`v-diagram/SKILL.md`](v-diagram/SKILL.md) にあります。
+<a id="installation-options"></a>
 
 ## インストール方法
 
@@ -336,23 +338,29 @@ node bin/v-diagram.mjs deliver workflow examples/agent-tool-call.workflow.json /
 | **Claude.ai** | Settings → Capabilities → Skills から `v-diagram.zip` をアップロード | サンドボックスでの Node.js 利用可否に依存 |
 | **Project Knowledge** | プロジェクトに `v-diagram.zip` をアップロード | プロンプト駆動のアーキテクチャフォールバック |
 
-## リファレンスとスコープ
+[エージェント切り替え](https://mbnetworku.github.io/V-Diagram/start.html?agent=cursor&type=architecture)は `cursor`、`codex`、`claude-code`、`opencode` 向けのコマンドを生成します。
 
-- [スキーマリファレンス](v-diagram/schemas/README.md) · [Skill](v-diagram/SKILL.md) · [サンプル](v-diagram/examples/) · [エージェント向けクックブック](docs/authoring-cookbook.md)
-- [変更履歴](CHANGELOG.md)
-- [生成された Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html)
+## ドキュメント
+
+- [Skill とビューアの仕様](v-diagram/SKILL.md) — 生成とビューアの完全なリファレンス
+- [スキーマリファレンス](v-diagram/schemas/README.md) · [サンプル](v-diagram/examples/) · [エージェント向けクックブック](docs/authoring-cookbook.md)
+- [変更履歴](CHANGELOG.md) · [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) · [シナリオガイド](https://mbnetworku.github.io/V-Diagram/guide.html)
 
 Mermaid の自動パース、汎用オートレイアウト、ホスティング型の共有、WYSIWYG 編集は、現時点では意図的にスコープ外としています。
+
+---
+
+<a id="contributing"></a>
+
+## コントリビュート
+
+Issue、プルリクエスト、実際の図の投稿を歓迎します。まずは[コントリビューションガイド](CONTRIBUTING.md)をご覧ください。不具合は再現可能なバグ報告フォームから、検証済みの図は[コミュニティショーケースフォーム](https://github.com/mbnetworku/V-Diagram/issues/new?template=showcase.yml)から投稿できます。
 
 ## ライセンス
 
 [Apache-2.0](LICENSE) — 自由に利用・改変・配布できます。
 
 過去の MIT 許諾は引き続き有効です。[NOTICE](NOTICE) と [LICENSE-MIT](LICENSE-MIT) を参照してください。第三者コンポーネントには各自のライセンスが適用されます。ソフトウェアの許諾はユーザー作成コンテンツの権利を変更せず、V-Diagram の商標を一般的に使用する権利も付与しません。
-
-## コントリビュート
-
-Issue、プルリクエスト、実際の図の投稿を歓迎します。まずは[コントリビューションガイド](CONTRIBUTING.md)をご覧ください。不具合は再現可能なバグ報告フォームから、検証済みの図は[コミュニティショーケースフォーム](https://github.com/mbnetworku/V-Diagram/issues/new?template=showcase.yml)から投稿できます。&nbsp;·&nbsp;[LINUX&nbsp;DO](https://linux.do)
 
 ## クレジットと免責事項
 
