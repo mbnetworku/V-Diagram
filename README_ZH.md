@@ -85,40 +85,6 @@ API 优先读取 Redis，缓存未命中时查询 PostgreSQL 并回填缓存。
 
 [Proof Lab](https://mbnetworku.github.io/V-Diagram/zh/gallery) 收录全部 11 个仓库内场景、JSON 源和校验回执。
 
-### 看懂一个真实代码仓库
-
-<sub>CODE → DIAGRAM · 有源码依据的系统地图</sub>
-
-[![根据公开仓库 mco-org/mco 生成的 MCO 运行时架构图](docs/assets/mco-runtime-share-card.png)](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)
-
-V-Diagram 追踪 [`mco-org/mco`](https://github.com/mco-org/mco) 的 `9f1a1cf` 版本并生成这张校验地图。**[打开成品 ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)** · [追踪下游 ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream) · [Typed Source](docs/cases/mco-runtime.architecture.json)
-
-### 易于扩展，社区还在不断创造新用法
-
-<sub>COMMUNITY STORIES · 社区用户提供的部分案例</sub>
-
-**生成之后，还可以继续创造。** V-Diagram 开源，成品是独立 HTML，你可以让 Agent 在此基础上继续修改、接入链接、扩展交互，做出适合自己场景的作品。社区已经把它用到了团队协作、旅行规划、法律核验、合同审查和故障复盘；下面只是其中一部分。
-
-一位用户从纸上手绘的多智能体架构开始，让 Agent 生成交互图，再通过对话加入 Kimi 执行池。另一些用户让 Agent 阅读项目，把生成的架构图带进飞书或钉钉，继续和团队讨论。
-
-还有用户把上海 CityWalk 攻略整理成了四天行程图：按天切换路线，点击节点查看地点信息，并跳转高德地图、小红书和大众点评。作者还扩展了到达打卡和停留记录，让一张路线图变成旅途中可以实际使用的小工具。这些扩展由社区作者为该作品添加。
-
-**[▶ 点击体验上海 CityWalk 交互版](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)**
-
-[![社区用户创作的上海 CityWalk 四天行程图](docs/assets/community/shanghai-citywalk.png)](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)
-
-**[▶ 点击体验交互版](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · 切换 D1–D4 行程，点击地点查看详情。
-
-<sub>社区作品 · 上海 CityWalk · 四天行程与地点链接</sub>
-
-### 下载下来，亲手点一点
-
-成品是一个独立的 HTML 文件。下载后用浏览器打开，即可使用该作品包含的节点详情和路径探索，无需安装 V-Diagram。把 HTML 文件发给别人，交互也会一起保留；外部网站和地图链接需要网络。
-
-**[打开上海 CityWalk 交互版 ↗](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · **[下载 HTML ↓](https://github.com/mbnetworku/V-Diagram/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
-
-<sub>试试切换 D1–D4、点击地点卡片，或打开地图链接。行程中的时间和地点信息为作者创作时的记录。</sub>
-
 ## 预览
 
 <details>
@@ -139,8 +105,6 @@ Export 菜单支持复制 PNG，并下载静态或动态格式：
 ![Route Share Card：突出 Users 到 API Server 的精确路径，同时保留完整架构作为上下文](docs/assets/v-diagram-route-share-card.png)
 
 完成 authored `Upstream` 或 `Downstream` reach 后，**Export → Reach Share Card** 会捕获这次阅读结果，但不冒充运行时影响分析。
-
-![MCO downstream Reach Share Card：展示从 Command Router 出发的已创作关系](docs/assets/mco-runtime-reach-share-card.png)
 
 在本地打开 [`examples/web-app.html`](examples/web-app.html)，即可体验完整 Viewer。
 

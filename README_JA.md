@@ -83,40 +83,6 @@ V-Diagram で 1 ページにまとめて答えて：API の P99 が 80 ms から
 
 [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) には、チェックイン済みの 11 シナリオすべてと、その JSON ソース、検証レシートが含まれています。
 
-### 実際のリポジトリを理解する
-
-<sub>CODE → DIAGRAM · ソースに基づくシステムマップ</sub>
-
-[![公開リポジトリ mco-org/mco から生成した MCO ランタイムアーキテクチャ](docs/assets/mco-runtime-share-card.png)](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)
-
-V-Diagram は [`mco-org/mco`](https://github.com/mco-org/mco) の `9f1a1cf` を解析し、この検証済みマップを生成しました。**[開く ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)** · [到達範囲をトレース ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream) · [型付きソース](docs/cases/mco-runtime.architecture.json)
-
-### 拡張しやすい。自分のものにする方法はいくつもある。
-
-<sub>COMMUNITY STORIES · ユーザーが共有してくれた事例の一部</sub>
-
-**図ができたあとも作り続けられます。** V-Diagram はオープンソースで、出力は単体で動く HTML です。エージェントに頼んで手を加えたり、役立つリンクをつないだり、自分のワークフロー向けのインタラクションを足したりできます。コミュニティの作例はチームのコラボレーション、旅行の計画、法令引用のチェック、契約レビュー、インシデントの振り返りにまで広がっています。ここに挙げたのはその一部です。
-
-あるユーザーは手描きのマルチエージェント構成図から始めてインタラクティブな図に変え、さらに会話を重ねて Kimi の実行プールを追加しました。別のユーザーはエージェントにプロジェクトを読ませ、できあがったアーキテクチャを Feishu や DingTalk に持ち込んでチームで議論しています。
-
-上海 CityWalk のガイドを 4 日間の行程表に変えたユーザーもいます。日ごとに切り替え、立ち寄り先を確認し、Amap・Xiaohongshu・Dianping へ飛べます。作者は到着時のチェックインや立ち寄り先のメモも追加し、旅行中に使える小さなツールに仕立てました。これらの拡張は、この成果物のためにコミュニティの作者自身が加えたものです。
-
-**[▶ インタラクティブな上海 CityWalk を見る](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)**
-
-[![コミュニティが作成した 4 日間の上海 CityWalk 行程表](docs/assets/community/shanghai-citywalk.png)](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)
-
-**[▶ インタラクティブ版を試す](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · D1〜D4 を切り替え、場所をクリックして探索できます。
-
-<sub>コミュニティ成果物 · 上海 CityWalk · 4 日分のルートと場所のリンク</sub>
-
-### ダウンロードして、開いて、探索する
-
-出力は単体で完結する HTML ファイルです。ダウンロードしてブラウザで開けば、その成果物に含まれるノードの詳細と経路の探索をそのまま使えます。閲覧に V-Diagram のインストールは必要ありません。HTML を誰かに送れば操作性もそのまま届きます。外部サイトや地図のリンクにはネットワーク接続が必要です。
-
-**[上海 CityWalk を見る ↗](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · **[HTML をダウンロード ↓](https://github.com/mbnetworku/V-Diagram/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
-
-<sub>D1〜D4 の切り替え、場所カードを開く、地図リンクをたどる、といった操作を試してみてください。時刻や場所の情報は作者の元の行程に基づいています。</sub>
-
 ## プレビュー
 
 <details>
@@ -137,8 +103,6 @@ Export メニューから PNG をクリップボードにコピーしたり、�
 ![Users から API Server への正確な経路を、アーキテクチャ全体を文脈として保持したまま示す Route Share Card](docs/assets/v-diagram-route-share-card.png)
 
 記述された `Upstream` / `Downstream` の到達範囲をトレースしたあと、**Export → Reach Share Card** はランタイム上の影響を主張することなく、その読み取り結果をそのまま切り出します。
-
-![Command Router からの記述済み関係を示す MCO の下流 Reach Share Card](docs/assets/mco-runtime-reach-share-card.png)
 
 完全なビューアを試すには、[`examples/web-app.html`](examples/web-app.html) をローカルで開いてください。
 

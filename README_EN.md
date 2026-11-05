@@ -65,8 +65,6 @@ After tracing a route, **Export → Route Share Card** downloads that authored p
 
 After tracing authored `Upstream` or `Downstream` reach, **Export → Reach Share Card** captures that exact reading without claiming runtime impact.
 
-![MCO downstream Reach Share Card showing authored relationships from Command Router](docs/assets/mco-runtime-reach-share-card.png)
-
 Open [`examples/web-app.html`](examples/web-app.html) locally to try the complete viewer.
 
 </details>
@@ -163,24 +161,6 @@ while the mean barely moved. What is the likely cause, and how should we investi
 | Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
 
 The [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
-
-### A real repository, mapped
-
-![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)
-
-V-Diagram traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. Read the [typed source](docs/cases/mco-runtime.architecture.json), or open it in the [Proof Lab](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1) and [trace its reach](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream).
-
-### Made your own
-
-V-Diagram output is standalone HTML, so you can keep building after it is generated. Community creations already span team collaboration, travel planning, legal citation checks, contract review, and incident retrospectives.
-
-One user turned a Shanghai CityWalk guide into a four-day itinerary: switch between days, inspect a stop, and jump to Amap, Xiaohongshu, or Dianping. The author added arrival check-ins and stop notes, turning it into a small tool to use during the trip.
-
-![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)
-
-**[▶ Explore the interactive itinerary](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · **[Download the HTML ↓](https://github.com/mbnetworku/V-Diagram/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
-
-<sub>Community artifact. Times and place information reflect the author's original itinerary. Download it and open it in a browser; no V-Diagram installation is needed. External map links need a network connection.</sub>
 
 ---
 
