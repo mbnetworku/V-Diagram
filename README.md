@@ -6,14 +6,17 @@
 </p>
 <h3 align="center">Turn anything you want to understand, plan, or share into an interactive visual.</h3>
 
-<p align="center"><img src="docs/assets/v-diagram-readme-hero.png" alt="V-Diagram — interactive diagrams" width="960" /></p>
-
-<p align="center">Start with an idea, a question, or a plan. Describe it to your AI agent, and V-Diagram turns it into an interactive HTML you can explore, customize, and share. From travel itineraries and learning maps to complex systems—make it your own.</p>
+<p align="center">Describe an idea, a question, or a plan to your AI agent. V-Diagram turns it into one self-contained HTML file you can explore, customize, and share.</p>
 
 <p align="center">
-  <a href="https://mbnetworku.github.io/V-Diagram/gallery.html"><strong>Live demos</strong></a> &nbsp;·&nbsp;
-  <a href="#start"><strong>Get started</strong></a> &nbsp;·&nbsp;
-  <a href="https://mbnetworku.github.io/V-Diagram/guide.html"><strong>Scenario guide</strong></a> &nbsp;·&nbsp;
+  <a href="#start"><strong>Quick start</strong></a> &nbsp;·&nbsp;
+  <a href="#what-you-can-make"><strong>What you can make</strong></a> &nbsp;·&nbsp;
+  <a href="#diagram-types"><strong>Diagram types</strong></a> &nbsp;·&nbsp;
+  <a href="#explore-and-share"><strong>Explore &amp; share</strong></a> &nbsp;·&nbsp;
+  <a href="#contributing"><strong>Contribute</strong></a>
+</p>
+
+<p align="center">
   <a href="./README_ZH.md"><strong>简体中文</strong></a> &nbsp;·&nbsp;
   <a href="./README_JA.md"><strong>日本語</strong></a>
 </p>
@@ -25,102 +28,28 @@
   <a href="CHANGELOG.md#320--2026-10-18"><img src="https://img.shields.io/badge/version-3.2.0-0891b2?style=flat-square" alt="Stable version 3.2.0" /></a>
 </p>
 
+<p align="center"><img src="docs/assets/v-diagram-readme-hero.png" alt="V-Diagram — interactive diagrams" width="960" /></p>
+
 ## See V-Diagram in action
 
 <!-- v-diagram-launch-video -->
 
 https://github.com/user-attachments/assets/78570807-ba1d-4737-953f-55504a378a87
 
-**One sentence. Your repo, mapped.** Watch the 35-second demo: explore the diagram, follow source links, and trace a path. [Try the interactive examples ↗](https://mbnetworku.github.io/V-Diagram/gallery.html)
+<p align="center"><sub>35-second demo: explore the diagram, follow source links, and trace a path.</sub></p>
 
-<a id="start"></a>
+## Why V-Diagram
 
-### Install, then describe your idea
-
-Works with Cursor, Claude Code, Codex CLI, and OpenCode. See installation options below for additional integrations.
-
-```bash
-npx skills add mbnetworku/V-Diagram -g
-```
-
-Send this to your agent:
-
-```text
-Use V-Diagram to diagram a web request: Browser calls the API,
-the API checks Redis, and a cache miss queries PostgreSQL and fills the cache.
-```
-
-Then continue: “Add authentication”, “Highlight the cache-miss path”, or “Switch to the light theme”.
-
-**No repository is required:** start with a description, or ask your agent to read a repository for a source-backed architecture diagram.
-
-[Choose your agent](https://mbnetworku.github.io/V-Diagram/start.html?agent=cursor&type=architecture) · [Installation details and update checks](#quick-start) · [Create and check diagrams with your agent](https://mbnetworku.github.io/V-Diagram/agent-diagrams)
-
-## Ask a question, get a one-page answer
-
-Not every answer is one diagram. Ask your agent to answer as a page and V-Diagram builds an **explainer**: the conclusion first, then one panel per question, with tables, steps, charts, code and validated diagrams.
-
-![An explainer page: the answer first, then steps beside the sequence diagram they walk through](docs/assets/explainer-tls-en.png)
-
-- **Conclusion first.** The answer and its reasons lead; every panel takes one question.
-- **Diagrams that explain.** Steps sit beside the diagram they walk through and light its parts as you read. Click any node to open the full interactive view.
-- **Easy to check.** Claims cite numbered sources; repository excerpts are pinned to a commit and open in a source card.
-- **Easy to share.** One HTML file with four styles and light or dark themes. Export a PNG, WebP or JPG long image, or print to PDF. Ask about any panel to get a follow-up your agent can use to revise just that panel.
-
-```text
-Use V-Diagram to answer as one page: our API's P99 went from 80 ms to 600 ms
-while the mean barely moved. What is the likely cause, and how should we investigate?
-```
-
-## Show what matters
-
-| Explain an agent workflow | Follow a cache miss | Explore service relationships |
-|---|---|---|
-| ![Agent workflow tracing everything the planner drives](docs/assets/v-diagram-demo-reach.png) | ![Cache-miss sequence showing the Web App to Postgres route](docs/assets/v-diagram-demo-route.png) | ![Production architecture comparing backend and database roles](docs/assets/v-diagram-demo-lens.png) |
-| Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
-
-The [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
-
-### Understand a real repository
-
-<sub>CODE → DIAGRAM · A source-backed system map</sub>
-
-![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)
-
-V-Diagram traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. **[Open it ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1)** · [trace reach ↗](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream) · [typed source](docs/cases/mco-runtime.architecture.json)
-
-### Easy to extend. More ways to make it yours.
-
-<sub>COMMUNITY STORIES · Selected examples shared by users</sub>
-
-**Keep building after the diagram is generated.** V-Diagram is open source and its output is standalone HTML. Ask your agent to adapt it, connect useful links, or add interactions for your own workflow. Community creations already span team collaboration, travel planning, legal citation checks, contract review, and incident retrospectives. These are just a few examples.
-
-One user started with a hand-drawn multi-agent architecture, turned it into an interactive diagram, then added a Kimi execution pool through conversation. Others asked their agent to read a project and brought the resulting architecture into Feishu or DingTalk for team discussion.
-
-Another user turned a Shanghai CityWalk guide into a four-day itinerary: switch between days, inspect a stop, and jump to Amap, Xiaohongshu, or Dianping. The author also added arrival check-ins and stop notes, turning the itinerary into a small tool to use during the trip. These extensions were added by the community author for this particular artifact.
-
-**[▶ Explore the interactive Shanghai CityWalk](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)**
-
-![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)
-
-**[▶ Try the interactive version](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · Switch between D1–D4 and click a place to explore.
-
-<sub>Community artifact · Shanghai CityWalk · Four days of routes and place links</sub>
-
-### Download it. Open it. Explore it.
-
-The output is a self-contained HTML file. Download it and open it in your browser to use the node details and path exploration included in that artifact. No V-Diagram installation is needed to view it. Send the HTML to someone else and the interactions go with it; external websites and map links need a network connection.
-
-**[Explore the Shanghai CityWalk ↗](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · **[Download HTML ↓](https://github.com/mbnetworku/V-Diagram/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
-
-<sub>Try switching between D1–D4, opening a place card, or following a map link. Times and place information reflect the author's original itinerary.</sub>
+| 🗺️ Understand the structure | 🧭 Walk through the story | 🧩 Extend it your way | 📤 Share the result |
+|---|---|---|---|
+| Map components, workflows, and relationships from code or a plain description. | Explore nodes, follow paths, and share any view as a link. | Keep an editable typed source and build on the open-source code or generated HTML. | One self-contained HTML file, or export images, video, and share cards. |
 
 ## Preview
 
 <details>
-<summary>Themes, exports, and share cards</summary>
+<summary><strong>Themes, exports, and share cards</strong></summary>
 
-Same diagram, two themes, one click to switch:
+<br />
 
 | Dark | Light |
 |---|---|
@@ -142,53 +71,28 @@ Open [`examples/web-app.html`](examples/web-app.html) locally to try the complet
 
 </details>
 
+---
+
+<a id="start"></a>
+
 ## Quick start
 
-**Current stable version:** `v3.2.0`. See [Changelog](CHANGELOG.md#320--2026-10-18).
-
-### 1. Install
+**1. Install** (Cursor, Claude Code, Codex CLI, OpenCode):
 
 ```bash
 npx skills add mbnetworku/V-Diagram -g
 ```
 
-<details>
-<summary>More installation options and update-check details</summary>
-
-For an explicit, non-interactive Cursor install:
-
-```bash
-npx -y skills add mbnetworku/V-Diagram --skill v-diagram --agent cursor --global --copy --yes
-```
-
-To try without installing:
-
-```bash
-npx skills use mbnetworku/V-Diagram@v-diagram --agent codex
-```
-
-
-The [agent switcher](https://mbnetworku.github.io/V-Diagram/start.html?agent=cursor&type=architecture) covers `cursor`, `codex`, `claude-code`, and `opencode`.
-
-V-Diagram may GET the fixed stable manifest solely to show an optional reminder; it never downloads or installs updates. Successful checks wait about 24 hours (±20%); active use retries failures after 6, then 24 hours. The server sees normal HTTP metadata (IP and time), but receives no version, Agent, project data, prompts, account/device ID, or ETag. You decide whether and when to update. Set `VDIAGRAM_UPDATE_CHECK_DISABLED=1` to disable networking and reminder-state writes.
-
-</details>
-
-### Stay updated
-
-- **Get release notifications:** select **Watch → Custom → Releases** at the top of this GitHub repository. Starring the project does not subscribe you to release notifications.
-- **See what changed:** [Release notes](https://github.com/mbnetworku/V-Diagram/releases).
-- **Use a feed reader:** [Subscribe to the release feed](https://github.com/mbnetworku/V-Diagram/releases.atom).
-
-Installations with the update checker also check for newer stable releases during diagram delivery and can show a reminder. Older installations without the checker need a manual update to gain this feature. You choose whether and when to upgrade; V-Diagram never installs updates automatically.
-
-### 2. Start from a description — no repository required
+**2. Ask your agent.** No repository is required:
 
 ```text
-Use V-Diagram to draw: Browser -> API -> Redis cache -> PostgreSQL fallback.
+Use V-Diagram to diagram a web request: Browser calls the API,
+the API checks Redis, and a cache miss queries PostgreSQL and fills the cache.
 ```
 
-For source evidence, open a repository and ask:
+**3. Refine in chat.** Try “Add authentication”, “Highlight the cache-miss path”, or “Switch to the light theme”. V-Diagram keeps the typed source so unrelated structure stays stable.
+
+For source-backed output, open a repository and ask:
 
 ```text
 Analyze this repository, then use v-diagram to create a high-level runtime architecture diagram.
@@ -196,14 +100,93 @@ Show 8–12 core components, one primary path, external dependencies, and trust 
 Put supporting detail in cards instead of adding more edges.
 ```
 
-### 3. Refine in chat
-
-Continue with focused requests such as `add Redis`, `move auth to the left`, or `highlight the rollback path`. V-Diagram keeps the typed source available for targeted iteration.
-
-## Choose the right diagram
+<a id="quick-start"></a>
 
 <details>
-<summary>Ten diagram types, architecture comparisons, and examples</summary>
+<summary><strong>Install options, update checks, and staying updated</strong> (current stable: <code>v3.2.0</code>)</summary>
+
+<br />
+
+Explicit, non-interactive Cursor install:
+
+```bash
+npx -y skills add mbnetworku/V-Diagram --skill v-diagram --agent cursor --global --copy --yes
+```
+
+Try without installing:
+
+```bash
+npx skills use mbnetworku/V-Diagram@v-diagram --agent codex
+```
+
+**Update checks.** V-Diagram may GET the fixed stable manifest solely to show an optional reminder; it never downloads or installs updates. Successful checks wait about 24 hours (±20%); active use retries failures after 6, then 24 hours. The server sees normal HTTP metadata (IP and time), but receives no version, Agent, project data, prompts, account/device ID, or ETag. You decide whether and when to update. Set `VDIAGRAM_UPDATE_CHECK_DISABLED=1` to disable networking and reminder-state writes.
+
+**Stay updated.**
+
+- **Release notifications:** select **Watch → Custom → Releases** at the top of this GitHub repository. Starring the project does not subscribe you to release notifications.
+- **What changed:** [Release notes](https://github.com/mbnetworku/V-Diagram/releases) and the [Changelog](CHANGELOG.md#320--2026-10-18).
+- **Feed reader:** [Subscribe to the release feed](https://github.com/mbnetworku/V-Diagram/releases.atom).
+
+Installations with the update checker also check for newer stable releases during diagram delivery and can show a reminder. Older installations without the checker need a manual update to gain this feature. V-Diagram never installs updates automatically.
+
+</details>
+
+---
+
+<a id="what-you-can-make"></a>
+
+## What you can make
+
+### One-page answers
+
+Ask your agent to answer as a page and V-Diagram builds an **explainer**: the conclusion first, then one panel per question, with tables, steps, charts, code, and validated diagrams.
+
+![An explainer page: the answer first, then steps beside the sequence diagram they walk through](docs/assets/explainer-tls-en.png)
+
+| | |
+|---|---|
+| **Conclusion first** | The answer and its reasons lead; every panel takes one question. |
+| **Diagrams that explain** | Steps sit beside the diagram they walk through and light its parts as you read. |
+| **Easy to check** | Claims cite numbered sources; repository excerpts are pinned to a commit. |
+| **Easy to share** | One HTML file, four styles, light or dark. Export PNG, WebP, JPG, or PDF. |
+
+```text
+Use V-Diagram to answer as one page: our API's P99 went from 80 ms to 600 ms
+while the mean barely moved. What is the likely cause, and how should we investigate?
+```
+
+### Views that show what matters
+
+| Explain an agent workflow | Follow a cache miss | Explore service relationships |
+|---|---|---|
+| ![Agent workflow tracing everything the planner drives](docs/assets/v-diagram-demo-reach.png) | ![Cache-miss sequence showing the Web App to Postgres route](docs/assets/v-diagram-demo-route.png) | ![Production architecture comparing backend and database roles](docs/assets/v-diagram-demo-lens.png) |
+| Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
+
+The [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
+
+### A real repository, mapped
+
+![MCO runtime architecture generated from the public mco-org/mco repository](docs/assets/mco-runtime-share-card.png)
+
+V-Diagram traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. Read the [typed source](docs/cases/mco-runtime.architecture.json), or open it in the [Proof Lab](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark&present=1) and [trace its reach](https://mbnetworku.github.io/V-Diagram/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream).
+
+### Made your own
+
+V-Diagram output is standalone HTML, so you can keep building after it is generated. Community creations already span team collaboration, travel planning, legal citation checks, contract review, and incident retrospectives.
+
+One user turned a Shanghai CityWalk guide into a four-day itinerary: switch between days, inspect a stop, and jump to Amap, Xiaohongshu, or Dianping. The author added arrival check-ins and stop notes, turning it into a small tool to use during the trip.
+
+![A community-created four-day Shanghai CityWalk itinerary](docs/assets/community/shanghai-citywalk.png)
+
+**[▶ Explore the interactive itinerary](https://mbnetworku.github.io/V-Diagram/cases/community/shanghai-citywalk.html)** · **[Download the HTML ↓](https://github.com/mbnetworku/V-Diagram/raw/refs/heads/main/docs/cases/community/shanghai-citywalk.html)**
+
+<sub>Community artifact. Times and place information reflect the author's original itinerary. Download it and open it in a browser; no V-Diagram installation is needed. External map links need a network connection.</sub>
+
+---
+
+<a id="diagram-types"></a>
+
+## Diagram types
 
 | Type | Best for | Include in your prompt |
 |---|---|---|
@@ -212,81 +195,102 @@ Continue with focused requests such as `add Redis`, `move auth to the left`, or 
 | **Sequence** | API calls, cache fallback, auth, async traces | Callers, callees, returns, timing |
 | **Data Flow** | Pipelines, lineage, PII, consumers | Sources, transforms, stores, boundaries |
 | **Lifecycle** | States, retries, waits, terminal outcomes | States, events, retry and cancellation paths |
-| **ERD** | Database schemas: tables, columns, keys, cardinality | Tables, every column with its type, primary/foreign/unique keys, relationship cardinality |
-| **Class** | Classes, interfaces, selected members, type relationships | Types, key members, inheritance and implementations, composition, dependencies |
-| **Tree** | Single-parent hierarchies: repositories, modules, capability breakdowns | Root, levels, what each branch contains |
-| **Timeline** | When things happened: incident reviews, release histories | Timestamps with time zone, events, source lanes, whether times are observed or illustrative |
-| **Waterfall** | Where the time went in one request or agent run | Spans, start times and durations, nesting, whether timings are measured or illustrative |
+| **ERD** | Database schemas: tables, columns, keys, cardinality | Tables, every column with its type, keys, cardinality |
+| **Class** | Classes, interfaces, selected members, type relationships | Types, key members, inheritance, composition, dependencies |
+| **Tree** | Single-parent hierarchies: repositories, modules, capabilities | Root, levels, what each branch contains |
+| **Timeline** | When things happened: incident reviews, release histories | Timestamps with time zone, events, source lanes |
+| **Waterfall** | Where the time went in one request or agent run | Spans, start times and durations, nesting |
 
-Architecture's optional `deployment-ownership` profile fails closed when authored owners, region placement, private database scope, or named crossings are missing; it is never implicit and does not inspect live infrastructure. See the [checked deployment proof](https://mbnetworku.github.io/V-Diagram/gallery.html#proof-deployment-ownership).
-
-For design or PR review, Architecture Delta compares validated Before / Delta / After snapshots with a machine receipt. Select an authored change or play one finite, viewer-only Review; it infers no impact, risk, or merge safety.
-
-`node v-diagram/bin/v-diagram.mjs compare architecture base.json head.json architecture-delta.html --json`
-
-[![Architecture Delta showing added, removed, changed, and moved authored facts](docs/assets/architecture-delta-proof.jpg)](examples/checkout-platform-delta.html)
-
-Not sure which one fits? Use the [interactive scenario guide](https://mbnetworku.github.io/V-Diagram/guide.html), or ask the zero-dependency CLI:
+Not sure which one fits? Use the [scenario guide](https://mbnetworku.github.io/V-Diagram/guide.html), or ask the zero-dependency CLI:
 
 ```bash
 node v-diagram/bin/v-diagram.mjs guide "Show an API request with Redis cache miss"
 node v-diagram/bin/v-diagram.mjs guide "Map Kafka topics, consumer groups, replay, and DLQ" --json
 ```
 
-Workflow keeps the happy path clear across lanes:
+<details>
+<summary><strong>See an example of every type</strong></summary>
 
-![Workflow example](docs/assets/v-diagram-workflow.png)
+<br />
 
-Sequence explains one interaction over time:
+| Workflow | Sequence | Data Flow |
+|---|---|---|
+| ![Workflow example](docs/assets/v-diagram-workflow.png) | ![Sequence example](docs/assets/v-diagram-sequence.png) | ![Data Flow example](docs/assets/v-diagram-dataflow.png) |
+| Keeps the happy path clear across lanes. | Explains one interaction over time. | Makes movement and sensitivity boundaries explicit. |
 
-![Sequence example](docs/assets/v-diagram-sequence.png)
+| Lifecycle | ERD | Class |
+|---|---|---|
+| ![Lifecycle example](docs/assets/v-diagram-lifecycle.png) | ![ERD example: an order management schema with customer, order, payment, inventory, product and order item tables grouped by domain](docs/assets/v-diagram-erd.png) | ![Class example: OrderService depends on the PaymentGateway interface, implemented by card and wallet gateways](docs/assets/v-diagram-class.png) |
+| Separates progress, waits, retries, and outcomes. | Keeps tables, columns, keys, and cardinality together. | Shows contracts, members, and dependencies. |
 
-Data Flow makes movement and sensitivity boundaries explicit:
+| Tree | Timeline | Waterfall |
+|---|---|---|
+| ![Tree example: a payment platform broken down into orders, payments and operations capabilities](docs/assets/v-diagram-tree.png) | ![Timeline example: an illustrative payment incident with release, monitoring and response events on one clock](docs/assets/v-diagram-timeline.png) | ![Waterfall example: illustrative timing of a checkout request where inventory lookup and discount calculation run concurrently](docs/assets/v-diagram-waterfall.png) |
+| Single-parent containment. | Events on one proportional clock. | Nested and overlapping spans. |
 
-![Data Flow example](docs/assets/v-diagram-dataflow.png)
+ERD, Class, Tree, Timeline, and Waterfall arrived in 3.1. Timeline and Waterfall examples use illustrative data; treat timestamps or durations as real only when they come from logs or traces.
 
-Lifecycle separates progress, waits, retries, and terminal outcomes:
+**Open them:** [`ERD`](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/orders.erd.html) · [`Class`](examples/class-payments-rendered.html) · [`Tree`](examples/tree-payment-platform-rendered.html) · [`Timeline`](examples/timeline-payment-incident-rendered.html) · [`Waterfall`](examples/waterfall-checkout-request-rendered.html)
 
-![Lifecycle example](docs/assets/v-diagram-lifecycle.png)
-
-New in 3.1: ERD, Class, Tree, Timeline and Waterfall.
-
-ERD keeps tables, every column and key, and relationship cardinality together:
-
-![ERD example: an order management schema with customer, order, payment, inventory, product and order item tables grouped by domain](docs/assets/v-diagram-erd.png)
-
-Class shows contracts, selected members, and which types depend on or implement them:
-
-![Class example: OrderService depends on the PaymentGateway interface, implemented by card and wallet gateways](docs/assets/v-diagram-class.png)
-
-Tree shows single-parent containment, such as a capability breakdown:
-
-![Tree example: a payment platform broken down into orders, payments and operations capabilities](docs/assets/v-diagram-tree.png)
-
-Timeline places events on one proportional clock, with a lane per source:
-
-![Timeline example: an illustrative payment incident with release, monitoring and response events on one clock](docs/assets/v-diagram-timeline.png)
-
-Waterfall shows where the time went across nested and overlapping spans:
-
-![Waterfall example: illustrative timing of a checkout request where inventory lookup and discount calculation run concurrently](docs/assets/v-diagram-waterfall.png)
-
-Explore these examples: [`ERD`](https://mbnetworku.github.io/V-Diagram/gallery/artifacts/orders.erd.html) · [`Class`](examples/class-payments-rendered.html) · [`Tree`](examples/tree-payment-platform-rendered.html) · [`Timeline`](examples/timeline-payment-incident-rendered.html) · [`Waterfall`](examples/waterfall-checkout-request-rendered.html). The Timeline and Waterfall examples use illustrative data; treat timestamps or durations as real only when they come from logs or traces.
-
-Architecture examples: [`web-app`](examples/web-app.html) · [`V-Diagram pipeline`](examples/v-diagram-repo.html) · [`grid placement`](examples/v-diagram-repo-grid.html) · [`desktop agent`](examples/maka-architecture.html)
+**Architecture examples:** [`web-app`](examples/web-app.html) · [`V-Diagram pipeline`](examples/v-diagram-repo.html) · [`grid placement`](examples/v-diagram-repo-grid.html) · [`desktop agent`](examples/maka-architecture.html)
 
 </details>
 
-## Why V-Diagram
+<details>
+<summary><strong>Architecture profiles and review (Delta)</strong></summary>
 
-| Understand the structure | Walk through the story |
+<br />
+
+Architecture's optional `deployment-ownership` profile fails closed when authored owners, region placement, private database scope, or named crossings are missing. It is never implicit and does not inspect live infrastructure. See the [checked deployment proof](https://mbnetworku.github.io/V-Diagram/gallery.html#proof-deployment-ownership).
+
+For design or PR review, Architecture Delta compares validated Before / Delta / After snapshots with a machine receipt. Select an authored change or play one finite, viewer-only Review; it infers no impact, risk, or merge safety.
+
+```bash
+node v-diagram/bin/v-diagram.mjs compare architecture base.json head.json architecture-delta.html --json
+```
+
+[![Architecture Delta showing added, removed, changed, and moved authored facts](docs/assets/architecture-delta-proof.jpg)](examples/checkout-platform-delta.html)
+
+</details>
+
+---
+
+<a id="explore-and-share"></a>
+
+## Explore and share
+
+Every output is a self-contained HTML viewer. Keyboard shortcuts and controls:
+
+| Action | Control |
 |---|---|
-| Map components, workflows, and relationships from code or a description. | Explore nodes, follow paths, and share any view as a link. |
-| **Extend it your way** | **Share the result** |
-| Keep an editable source and build on the open-source code or generated HTML with your own interactions and use cases. | Share a self-contained HTML file or export images, video, and share cards. |
+| Open the factual Diagram Guide | <kbd>?</kbd> |
+| Find and focus a semantic node | <kbd>/</kbd> |
+| Trace upstream/downstream authored reach | Focus a node → `Upstream` / `Downstream` |
+| Probe a directed route and inspect its journey | <kbd>R</kbd> or `PATH` |
+| Compare one or two semantic roles | <kbd>L</kbd> or `LENS` |
+| Open the live overview radar | <kbd>M</kbd> or `MAP` |
+| Enter Presentation Stage | <kbd>F</kbd> |
+| Choose visual style / toggle theme / open Export | <kbd>S</kbd> / <kbd>T</kbd> / <kbd>E</kbd> |
+| Zoom or reset | <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> |
+
+Stable links restore `#focus=<id>`, `#focus=<id>&reach=upstream|downstream`, `#relation=<id>`, `#route=<source>~<target>`, and `#lens=<kind>~<kind>`. Motion respects `prefers-reduced-motion` and never enters canonical exports.
+
+---
+
+## How it works
+
+| Step | What happens |
+|---|---|
+| **1 · Generate** | The agent creates typed JSON IR from your description. |
+| **2 · Validate** | Bundled validators and layout rules check the source; failures identify the exact local repair in machine-readable JSON. |
+| **3 · Preview** *(optional)* | A loopback-only desktop session watches one source and reloads only verified revisions; failures keep the last-good artifact. |
+| **4 · Deliver** | A same-directory candidate is rendered and checked; only a passing artifact atomically replaces the target. |
+| **5 · Iterate** | The agent updates the source while unrelated structure stays stable. |
 
 <details>
-<summary>The engineering behind the experience</summary>
+<summary><strong>Engineering details</strong></summary>
+
+<br />
 
 - **Layout judgment over generic auto-layout** — the agent chooses hierarchy, spacing, routes, and emphasis; shared automatic endpoints spread deterministically instead of piling arrows on one midpoint.
 - **Typed JSON IR** — every renderer-backed mode has a schema and reproducible source.
@@ -301,20 +305,10 @@ V-Diagram is not a general-purpose drawing editor or a Mermaid theme. It turns t
 
 </details>
 
-## How it works
-
 <details>
-<summary>Generation, validation, preview, and delivery details</summary>
+<summary><strong>Command-line reference and settings</strong></summary>
 
-| Step | What happens |
-|---|---|
-| **Generate** | The agent creates typed JSON IR from your description. |
-| **Validate** | Bundled validators and layout rules check the source; failures identify the exact local repair in machine-readable JSON. |
-| **Preview (optional)** | A loopback-only desktop session watches one source and reloads only verified revisions; failures keep the last-good artifact. |
-| **Deliver** | A same-directory candidate is rendered and checked; only a passing artifact atomically replaces the target, then optional `--open` launches that exact file. |
-| **Iterate** | The agent updates the source while unrelated structure stays stable. |
-
-Useful repository commands:
+<br />
 
 ```bash
 cd v-diagram
@@ -348,23 +342,9 @@ Settings:
 
 </details>
 
-## Explore and share the output
+---
 
-| Action | Control |
-|---|---|
-| Open the factual Diagram Guide | <kbd>?</kbd> |
-| Find and focus a semantic node | <kbd>/</kbd> |
-| Trace upstream/downstream authored reach | Focus a node → `Upstream` / `Downstream` |
-| Probe a directed route and inspect its journey | <kbd>R</kbd> or `PATH` |
-| Compare one or two semantic roles | <kbd>L</kbd> or `LENS` |
-| Open the live overview radar | <kbd>M</kbd> or `MAP` |
-| Enter Presentation Stage | <kbd>F</kbd> |
-| Choose visual style (`S` cycles) / toggle theme / open Export | <kbd>S</kbd> / <kbd>T</kbd> / <kbd>E</kbd> |
-| Zoom or reset | <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> |
-
-Stable links can restore `#focus=<id>`, `#focus=<id>&reach=upstream|downstream`, `#relation=<id>`, `#route=<source>~<target>`, and `#lens=<kind>~<kind>`. Live repeats connection flow until paused; semantic previews remain bounded. Motion respects `prefers-reduced-motion` and never enters canonical exports.
-
-The complete generation and viewer contract lives in [`v-diagram/SKILL.md`](v-diagram/SKILL.md).
+<a id="installation-options"></a>
 
 ## Installation options
 
@@ -376,23 +356,29 @@ The complete generation and viewer contract lives in [`v-diagram/SKILL.md`](v-di
 | **Claude.ai** | Upload `v-diagram.zip` under Settings → Capabilities → Skills | Depends on Node.js access in the sandbox |
 | **Project Knowledge** | Upload `v-diagram.zip` to the project | Prompt-driven architecture fallback |
 
-## Reference and scope
+The [agent switcher](https://mbnetworku.github.io/V-Diagram/start.html?agent=cursor&type=architecture) generates commands for `cursor`, `codex`, `claude-code`, and `opencode`.
 
-- [Schema reference](v-diagram/schemas/README.md) · [Skill](v-diagram/SKILL.md) · [Examples](v-diagram/examples/) · [Agent cookbook](docs/authoring-cookbook.md)
-- [Changelog](CHANGELOG.md)
-- [Generated Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html)
+## Documentation
+
+- [Skill and viewer contract](v-diagram/SKILL.md) — the complete generation and viewer reference
+- [Schema reference](v-diagram/schemas/README.md) · [Examples](v-diagram/examples/) · [Agent cookbook](docs/authoring-cookbook.md)
+- [Changelog](CHANGELOG.md) · [Proof Lab](https://mbnetworku.github.io/V-Diagram/gallery.html) · [Scenario guide](https://mbnetworku.github.io/V-Diagram/guide.html)
 
 Automatic Mermaid parsing, general-purpose auto-layout, hosted sharing, and WYSIWYG editing are intentionally outside the current scope.
+
+---
+
+<a id="contributing"></a>
+
+## Contributing
+
+Issues, pull requests, and real-world diagrams are welcome. Start with the [contribution guide](CONTRIBUTING.md), use the reproducible bug form for failures, or submit a validated diagram through the [community showcase form](https://github.com/mbnetworku/V-Diagram/issues/new?template=showcase.yml).
 
 ## License
 
 [Apache-2.0](LICENSE) — free to use, modify, and distribute.
 
 Historical MIT grants remain in effect; see [NOTICE](NOTICE) and [LICENSE-MIT](LICENSE-MIT). Third-party components retain their own licenses. The software license does not change ownership of your authored content or grant general permission to use V-Diagram trademarks.
-
-## Contributing
-
-Issues, pull requests, and real-world diagrams are welcome. Start with the [contribution guide](CONTRIBUTING.md), use the reproducible bug form for failures, or submit a validated diagram through the [community showcase form](https://github.com/mbnetworku/V-Diagram/issues/new?template=showcase.yml).&nbsp;·&nbsp;[LINUX&nbsp;DO](https://linux.do)
 
 ## Credits and disclaimer
 
